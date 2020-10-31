@@ -1,1 +1,5 @@
-https://github.com/sunilkumarrai2/learn_dbt.git
+dbt tutorial : https://learn.getdbt.com/jumpstart/
+
+mike: https://github.com/mleehayes/dbt_learn/tree/main
+
+sunil : https://github.com/sunilkumarrai2/learn_dbt.git
