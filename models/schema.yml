@@ -1,0 +1,34 @@
+version: 2
+
+models:
+    - name: stg_customers
+      description: Staged customer data from snowflake_sample_data.tpch_sf1. It is a intermediate model.
+      columns:
+        - name: customer_id
+          description: This is the primary key for customers.
+          tests:
+            - unique
+            - not_null
+
+    - name: stg_orders
+      description: Staged customer data from snowflake_sample_data.tpch_sf1. It is a intermediate model.
+      columns:
+        - name: o_orderstatus
+          description: "{{ doc('order_status') }}"
+          tests:
+            - accepted_values:
+                values:
+                    - P
+                    - F
+                    - O
+      tests:
+        - relationships:
+            column_name: "cast(customer_id as int)"
+            to: ref('stg_customers')
+            field: customer_id
+
+# dbt test -m stg_orders
+# dbt test --schema
+# dbt test --data
+
+# dbt docs generate

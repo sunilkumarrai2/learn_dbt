@@ -1,0 +1,7 @@
+1. data test
+2. schema test 
+    i)  not null, 
+    ii) unique, 
+    iii) accepted values
+    iv)  relationships
+    also can create custom test using jinga and macros. It is advanced concept
